@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import Swal from 'sweetalert2';
 export class AppComponent {
   title = 'oems';
 
-  sweetalert(){
-    Swal.fire("Sweet allert add");
-  }
+  // sweetalert(){
+  //   Swal.fire("Sweet allert add");
+  // }
 
 
 }
