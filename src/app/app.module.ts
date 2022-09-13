@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { SigninComponent } from './pages/signin/signin.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,

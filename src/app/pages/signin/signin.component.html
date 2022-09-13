@@ -1,1 +1,52 @@
-<p>signin works!</p>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center my-5">
+        <div class="col-md-5">
+            <!-- card start !!! -->
+            <mat-card>
+                <!-- card-title start !!! -->
+                <mat-card-title>
+                    <div class="row d-flex">
+                        <div class="col-md-12 text-center">
+                            <img src="https://www.careerinfotech.in/img/logo.jpg" class="w-25" alt="">
+                        </div>
+                    </div>
+                    <p class="text-center h3">Login !!</p>
+                </mat-card-title>
+                <!-- card-title end !!! -->
+
+                <!-- form start !!! -->
+                <form [formGroup]="user" (ngSubmit)="formSubmit()">
+                    <!-- user field -->
+                    <mat-form-field appearance="fill" class="col-12 px-2">
+                        <mat-label>User Name</mat-label>
+                        <input matInput type="text" name="username" formControlName="username">
+                    </mat-form-field>
+
+                    <!-- password field -->
+                    <mat-form-field appearance="fill" class="col-12 px-2">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password">
+                        <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </span>
+                    </mat-form-field>
+
+                    <!-- button start !!! -->
+                    <div class="row d-flex">
+                        <div class="col-md-6 text-end">
+                            <button mat-raised-button type="submit" color="primary" [disabled]="user.invalid">Sign
+                                In</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button mat-raised-button type="reset" color="warn">Clear</button>
+                        </div>
+                    </div>
+                    <!-- button end !!! -->
+                </form>
+                <!-- form end !!! -->
+            </mat-card>
+            <!-- card end !!! -->
+        </div>
+    </div>
+</div>

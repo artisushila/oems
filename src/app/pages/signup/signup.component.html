@@ -14,56 +14,62 @@
                 </mat-card-title>
                 <!-- card-title end !!! -->
 
-                <!-- user field -->
-                <mat-form-field appearance="fill" class="col-12 px-2">
-                    <mat-label>User Name</mat-label>
-                    <input matInput type="text">
-                </mat-form-field>
+                <!-- form tag start !!! -->
+                <form [formGroup]="user" (ngSubmit)="formSubmit()">
+                    <!-- user field -->
+                    <mat-form-field appearance="fill" class="col-12 px-2">
+                        <mat-label>User Name</mat-label>
+                        <input matInput type="text" name="username" formControlName="username" required>
+                    </mat-form-field>
 
-                <!-- first name field -->
-                <mat-form-field appearance="fill" class="col-6 px-2">
-                    <mat-label>First Name</mat-label>
-                    <input matInput type="text">
-                </mat-form-field>
+                    <!-- first name field -->
+                    <mat-form-field appearance="fill" class="col-6 px-2">
+                        <mat-label>First Name</mat-label>
+                        <input matInput type="text" name="firstname" formControlName="firstname" required>
+                    </mat-form-field>
 
-                <!-- last name field -->
-                <mat-form-field appearance="fill" class="col-6 px-2">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput type="text">
-                </mat-form-field>
+                    <!-- last name field -->
+                    <mat-form-field appearance="fill" class="col-6 px-2">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" name="lastname" formControlName="lastname" required>
+                    </mat-form-field>
 
-                <!-- email field -->
-                <mat-form-field appearance="fill" class="col-6 px-2">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email">
-                </mat-form-field>
+                    <!-- email field -->
+                    <mat-form-field appearance="fill" class="col-6 px-2">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" name="email" formControlName="email" required>
+                    </mat-form-field>
 
-                <!-- phone number field -->
-                <mat-form-field appearance="fill" class="col-6 px-2">
-                    <mat-label>Phone No</mat-label>
-                    <input matInput type="number">
-                </mat-form-field>
+                    <!-- phone number field -->
+                    <mat-form-field appearance="fill" class="col-6 px-2">
+                        <mat-label>Phone No</mat-label>
+                        <input matInput type="number" name="phone" formControlName="phone" required>
+                    </mat-form-field>
 
-                <!-- password field -->
-                <mat-form-field appearance="fill" class="col-12 px-2">
-                    <mat-label>Enter your password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                        [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                    </button>
-                </mat-form-field>
+                    <!-- password field -->
+                    <mat-form-field appearance="fill" class="col-12 px-2">
+                        <mat-label>Password</mat-label>
+                        <input name="password" matInput [type]="hide ? 'password' : 'text'" formControlName="password"
+                            required>
+                        <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </span>
+                    </mat-form-field>
 
-                <!-- button start !!! -->
-                <div class="row d-flex">
-                    <div class="col-md-6 text-end">
-                        <button mat-raised-button type="submit" color="primary">SignUp</button>
+                    <!-- button start !!! -->
+                    <div class="row d-flex">
+                        <div class="col-md-6 text-end">
+                            <button mat-raised-button type="submit" [disabled]="user.invalid"
+                                color="primary">SignUp</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button mat-raised-button type="reset" color="warn">Clear</button>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <button mat-raised-button type="reset" color="warn">Clear</button>
-                    </div>
-                </div>
-                <!-- button end !!! -->
+                    <!-- button end !!! -->
+                </form>
+                <!-- form tag end !!! -->
             </mat-card>
             <!-- card end !!! -->
         </div>
